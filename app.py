@@ -44,7 +44,7 @@ class VideoTransformer():
                 if res[np.argmax(res)] > threshold:
                     self.sentence.append(actions[np.argmax(res)])
 
-                if len(self.sentence) > 3:
+                if len(self.sentence) > 1:
                     self.sentence = self.sentence[-1:]
             except Exception as e:
                 print("No sentence detected:", str(e))
