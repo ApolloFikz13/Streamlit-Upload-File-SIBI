@@ -4,5 +4,3 @@ opencv_contrib_python==4.7.0.72
 opencv_python==4.8.0.74
 streamlit==1.24.0
 tensorflow==2.7.0
-freeglut3-dev
-libgtk2.0-dev
