@@ -7,7 +7,7 @@ import tempfile
 
 mp_holistic = mp.solutions.holistic  # Holistic model
 
-actions = ["halo","nama","saya"]
+actions = ["halo","nama","saya","kamu","siapa"]
 model = load_model('realtimeV12.h5')
 
 threshold = 0.5
@@ -58,6 +58,12 @@ st.markdown(
         background-color: rgb(114, 134, 211);
         height: 35px;
     }
+    .sentence {
+        font-size: 34px;
+    }
+    .subheader {
+        font-size: 14px;
+    }
     </style>
     """,
     unsafe_allow_html=True
@@ -65,9 +71,11 @@ st.markdown(
 
 st.markdown('<div class="bar"></div>', unsafe_allow_html=True)
 
-st.title("Sign Language Detection")
+st.markdown('<h1 style="text-align: center;">Sign Language Detection</h1>', unsafe_allow_html=True)
 
 uploaded_file = st.file_uploader("Upload a video file (5 second max.)", type=["mp4"])
+
+st.markdown('<h2 style="font-size: 24px;">Note: only detected one gesture at a time!</h2>', unsafe_allow_html=True)
 
 if uploaded_file is not None:
     with tempfile.NamedTemporaryFile(delete=False) as temp_file:
@@ -84,11 +92,11 @@ if uploaded_file is not None:
         ret, frame = video.read()
         if not ret:
             break
-
+        frame = cv2.flip(frame, 1)
         transformed_frame = video_transformer.transform(frame)
 
     video.release()
 
-    st.subheader("Detected Word:")
+    st.markdown('<h2 style="font-size: 30px;">Detected Word:</h2>', unsafe_allow_html=True)
 
-    st.write(' '.join(video_transformer.sentence))
+    st.write('<div class="sentence">' + ' '.join(video_transformer.sentence) + '</div>', unsafe_allow_html=True)
