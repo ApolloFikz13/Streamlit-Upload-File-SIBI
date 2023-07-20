@@ -10,7 +10,7 @@ mp_holistic = mp.solutions.holistic  # Holistic model
 #actions = ["halo","nama","saya","kamu","siapa"] #realtimemodel
 actions = ['di', 'halo', 'J', 'kamu', 'ke', 'mana', 'nama', 'saya', 'siapa', 'Z'] #KFold model
 
-@st.cache
+@st.cache_resource
 def load_custom_model():
     return load_model('kfold_model.h5')
 
