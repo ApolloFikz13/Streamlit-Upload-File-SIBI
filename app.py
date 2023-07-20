@@ -11,10 +11,10 @@ mp_holistic = mp.solutions.holistic  # Holistic model
 actions = ['di', 'halo', 'J', 'kamu', 'ke', 'mana', 'nama', 'saya', 'siapa', 'Z'] #KFold model
 
 @st.cache
-def load_model():
+def load_custom_model():
     return load_model('kfold_model.h5')
 
-model = load_model()
+model = load_custom_model()
 
 threshold = 0.5
 
