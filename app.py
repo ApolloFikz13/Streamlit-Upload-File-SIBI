@@ -12,7 +12,7 @@ actions = ['di', 'halo', 'J', 'kamu', 'ke', 'mana', 'nama', 'saya', 'siapa', 'Z'
 
 @st.cache
 def load_model():
-    return ml = load_model('kfold_model.h5')
+    return load_model('kfold_model.h5')
 
 model = load_model()
 
