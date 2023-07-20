@@ -9,7 +9,12 @@ mp_holistic = mp.solutions.holistic  # Holistic model
 
 #actions = ["halo","nama","saya","kamu","siapa"] #realtimemodel
 actions = ['di', 'halo', 'J', 'kamu', 'ke', 'mana', 'nama', 'saya', 'siapa', 'Z'] #KFold model
-model = load_model('kfold_model.h5')
+
+@st.cache
+def load_model():
+    return ml = load_model('kfold_model.h5')
+
+model = load_model()
 
 threshold = 0.5
 
