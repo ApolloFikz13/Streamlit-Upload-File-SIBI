@@ -82,9 +82,14 @@ st.markdown('<h1 style="text-align: center;">Sign Language Detection</h1>', unsa
 
 for _ in range(5):
     st.markdown("")
-
+    
+url = 'https://bit.ly/KataSIBI'
+st.markdown(f'''
+<a href={url}><button style="font-size: 13px; color: white;background-color:rgb(114, 134, 211);">klik untuk melihat kata yang bisa dideteksi</button></a>
+''',
+unsafe_allow_html=True)
 uploaded_file = st.file_uploader("Unggah video (maks. 5 detik)", type=["mp4"])
-flip_the_video = st.checkbox("cek untuk video dari kamera depan")
+flip_the_video = st.checkbox("cek untuk video mirrored")
 
 st.markdown('<h2 style="font-size: 21px;">Note: hanya dapat mendeteksi satu gerakan dalam satu waktu!</h2>', unsafe_allow_html=True)
 
