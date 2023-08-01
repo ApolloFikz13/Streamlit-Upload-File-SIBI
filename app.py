@@ -6,11 +6,11 @@ from tensorflow.keras.models import load_model
 import tempfile
 
 mp_holistic = mp.solutions.holistic  # Holistic model
-
+modelku = 'kfold_model.h5'
 #actions = ["halo","nama","saya","kamu","siapa"] #realtimemodel
-#actions = ['di', 'halo', 'J', 'kamu', 'ke', 'mana', 'nama', 'saya', 'siapa', 'Z'] #KFold model
-actions = ['aku', 'apa', 'bagaimana', 'berapa', 'di', 'halo', 'I', 'J', 'K', 'kamu', 'kapan', 'ke', 'kita', 'makan', 'mana', 'minum', 'nama', 'saya', 'siapa', 'Z'] #realtimemodel
-model = load_model('translateV17.h5')
+actions = ['di', 'halo', 'J', 'kamu', 'ke', 'mana', 'nama', 'saya', 'siapa', 'Z'] #KFold model
+#actions = ['aku', 'apa', 'bagaimana', 'berapa', 'di', 'halo', 'I', 'J', 'K', 'kamu', 'kapan', 'ke', 'kita', 'makan', 'mana', 'minum', 'nama', 'saya', 'siapa', 'Z'] #realtimemodel
+model = load_model(modelku)
 
 @st.cache_resource
 def load_custom_model():
