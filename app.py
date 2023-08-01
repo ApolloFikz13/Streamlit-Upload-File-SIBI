@@ -18,7 +18,7 @@ model = load_model('translateV17.h5')
 
 @st.cache_resource
 def load_custom_model():
-    return load_model('kfold_model.h5')
+    return load_model('translateV17.h5')
 
 model = load_custom_model()
 
